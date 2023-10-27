@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.get("/", (req, res) => res.json({'message': "Base web api starts"}));
 
-db.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
+db.sequelize.sync().then(() => {
+    console.log("Create and sync db.");
 }).catch(err => {
     console.log('Failed to sync db', err.message);
 })
